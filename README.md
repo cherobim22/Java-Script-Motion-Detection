@@ -3,3 +3,6 @@ Trabalho de conclusão de curso
 
 ## API
   - WebCam easy
+  - TrackingJS
+  - HandtrackJS
+  - Tersorflow
