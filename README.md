@@ -1,5 +1,8 @@
 # Java-Script-Motion-Detection
-Trabalho de conclusão de curso
+TCC
 
 ## API
   - WebCam easy
+  - TrackingJS
+  - HandtrackJS
+  - Tersorflow
