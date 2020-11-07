@@ -3,12 +3,26 @@
         ((e._wf = {  flowStarted: !1, d: t, g: e, publicAuth: 'MzQ5MS4yMDkwNi4yODcyZDRmODYzOWIwY2JmNGMxODYzN2VkN2QwOTFiYTVkOWYyZDIyMWYyODMzOWEwNWVhNmJhOGE2ZDQ0YzYw', userData: null }),
         (e._wf.loadData = () =>
             new Promise((t) => {
-                fetch("https://api.innovaweb.com.br/form/31753/json", { method: "GET", headers: { Accept: "application/json", "Content-Type": "application/json", Authorization: 'MzQ5MS4yMDkwNi4yODcyZDRmODYzOWIwY2JmNGMxODYzN2VkN2QwOTFiYTVkOWYyZDIyMWYyODMzOWEwNWVhNmJhOGE2ZDQ0YzYw' } })
+                fetch("https://api.innovaweb.com.br/form/31753/json", { method: "GET", headers: { Accept: "application/json", "Content-Type": "application/json", Authorization: e._wf.publicAuth } })
                     .then(async (n) => {
-                        let a = await n.json();
+                        // let a = await n.json();
+                        //  let { name: a, type: o, placeholder: r} = await n.json();
+                        // (e._wf.userData = {  name: a, type: o, placeholder: r}), t(!0);
                       
-                        console.log(a)
+                        // console.log(n.json());
+                        return n.json();
                     })
+                    .then(forms => {
+                        const formulario = document.getElementById('formulario');
+                        const form_name = forms.map(form => form.name).join("\n");
+                        const form_placeholder = forms.map(form => form.placeholder).join("\n");
+                        const form_type = forms.map(form => form.type).join("\n");
+
+                        formulario.innerHTML = e._wf.newForm(forms);
+                        // console.log(form_name);
+                        // console.log(form_placeholder);
+                        // console.log(form_type);
+                      })
                     .catch((e) => {
                         t(!1), console.error(e);
                     });
@@ -21,8 +35,29 @@
                     document.querySelector(".wf-tooltip").addEventListener("click", e._wf.openChat),
                     document.querySelector(".wf-close").addEventListener("click", e._wf.closeChat);
             }),
+            (e._wf.newForm = (forms) => {
+               
+
+                //foreach
+               console.log(forms[0].placeholder);
+            //    const teste = forms[0].placeholder;
+            //    console.log(teste);
+            //    console.log(forms.length);
+            
+            var a = [
+                `<input type=${forms[0].type} name=${forms[0].name} placeholder='${forms[0].placeholder}' > `,
+                `<input type=${forms[1].type} name=${forms[1].name} placeholder='${forms[1].placeholder}' > `
+            ]
+                  
+                   return  a;
+                    
+                  
+                    
+                  
+              
+            }),
         (e._wf.init = async (t) => {
-            // if (((e._wf.publicAuth = document.querySelector("#swfgd").dataset.publicAuth), !(await e._wf.loadData()))) throw "Failed to load data";
+            if (!(await e._wf.loadData())) throw "Failed to load data";
             if (!(await e._wf.injectBaseCss(t))) throw "Failed to load css";
             await e._wf.injectBaseHtml(t), e._wf.addListeners();
         }),
