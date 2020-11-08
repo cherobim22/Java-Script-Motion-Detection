@@ -37,11 +37,14 @@
  
             console.log(forms[0].placeholder);
             
-            var a = [
-                `<input type=${forms[0].type} name=${forms[0].name} placeholder='${forms[0].placeholder}' > `,
-                `<input type=${forms[1].type} name=${forms[1].name} placeholder='${forms[1].placeholder}' > `
-            ]
-                  
+            var a = [];
+            for(let i = 0; i< forms.length; i++){
+              
+                 a[i] = [
+                    `<input type=${forms[i].type} name=${forms[i].name} placeholder='${forms[i].placeholder}' > `
+                ];
+            
+            } 
             return  a;
 
             }),
