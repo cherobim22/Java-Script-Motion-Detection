@@ -5,19 +5,10 @@
             new Promise((t) => {
                 fetch("https://api.innovaweb.com.br/form/31753/json", { method: "GET", headers: { Accept: "application/json", "Content-Type": "application/json", Authorization: e._wf.publicAuth } })
                     .then(async (n) => {
-                        // let a = await n.json();
-                        //  let { name: a, type: o, placeholder: r} = await n.json();
-                        // (e._wf.userData = {  name: a, type: o, placeholder: r}), t(!0);
-                      
-                        // console.log(n.json());
                         return n.json();
                     })
                     .then(forms => {
                         const formulario = document.getElementById('formulario');
-                        // const form_name = forms.map(form => form.name).join("\n");
-                        // const form_placeholder = forms.map(form => form.placeholder).join("\n");
-                        // const form_type = forms.map(form => form.type).join("\n");
-
                         formulario.innerHTML = e._wf.newForm(forms);
                        
                       })
