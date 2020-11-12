@@ -1,4 +1,4 @@
-# JavaScript Aplicações e projetos
+# JavaScript Aplicações e projetos.
 
 - WebCamApi: utilizando a webcam atraves de javaScript
 - MotionDetection: Captando movimentos atraves da webcam utilizando javaScript
