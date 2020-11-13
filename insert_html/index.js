@@ -75,20 +75,20 @@
                         e(!1);
                     });
             })),
-        (e._wf.openChat = () => {
-            document.querySelector(".wf-container").classList.remove("wf-container-hidden"),
-                document.querySelector(".wf-tooltip").classList.add("wf-tooltip-hidden"),
-                document.querySelector(".wf-button-outline").classList.add("wf-button-outline-open"),
-                document.querySelector(".wf-button").classList.add("wf-button-open")
+        // (e._wf.openChat = () => {
+        //     document.querySelector(".wf-container").classList.remove("wf-container-hidden"),
+        //         document.querySelector(".wf-tooltip").classList.add("wf-tooltip-hidden"),
+        //         document.querySelector(".wf-button-outline").classList.add("wf-button-outline-open"),
+        //         document.querySelector(".wf-button").classList.add("wf-button-open")
             
-        }),
-        (e._wf.closeChat = () => {
-            document.querySelector(".wf-container").classList.add("wf-container-hidden"),
-                document.querySelector(".wf-button-outline").classList.remove("wf-button-outline-open"),
-                document.querySelector(".wf-button").classList.remove("wf-button-open");
-        }),
-        (e._wf.toggleButton = () => {
-            document.querySelector(".wf-container").classList.contains("wf-container-hidden") ? e._wf.openChat() : e._wf.closeChat();
-        }),
+        // }),
+        // (e._wf.closeChat = () => {
+        //     document.querySelector(".wf-container").classList.add("wf-container-hidden"),
+        //         document.querySelector(".wf-button-outline").classList.remove("wf-button-outline-open"),
+        //         document.querySelector(".wf-button").classList.remove("wf-button-open");
+        // }),
+        // (e._wf.toggleButton = () => {
+        //     document.querySelector(".wf-container").classList.contains("wf-container-hidden") ? e._wf.openChat() : e._wf.closeChat();
+        // }),
         e._wf.init(t));
 })(window, document);
