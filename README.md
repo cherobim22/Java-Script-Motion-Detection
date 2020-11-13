@@ -4,5 +4,4 @@
 - MotionDetection: Captando movimentos atraves da webcam utilizando javaScript
 - InsertHtml: inserindo html com javaScript
 - Exercicios: exercicios e funcionalidades sobre a linguagem
--
 
