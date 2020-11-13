@@ -16,14 +16,14 @@
                         t(!1), console.error(e);
                     });
             })),
-            (e._wf.addListeners = () => {
-                document.querySelector(".wf-send-container").addEventListener("click", e._wf.answear),
-                    document.querySelector(".wf-input").addEventListener("keydown", e._wf.handleInput),
-                    document.querySelector(".wf-input").addEventListener("keyup", e._wf.handleInputLength),
-                    document.querySelector(".wf-button-outline").addEventListener("click", e._wf.toggleButton),
-                    document.querySelector(".wf-tooltip").addEventListener("click", e._wf.openChat),
-                    document.querySelector(".wf-close").addEventListener("click", e._wf.closeChat);
-            }),
+            // (e._wf.addListeners = () => {
+            //     document.querySelector(".wf-send-container").addEventListener("click", e._wf.answear),
+            //         document.querySelector(".wf-input").addEventListener("keydown", e._wf.handleInput),
+            //         document.querySelector(".wf-input").addEventListener("keyup", e._wf.handleInputLength),
+            //         document.querySelector(".wf-button-outline").addEventListener("click", e._wf.toggleButton),
+            //         document.querySelector(".wf-tooltip").addEventListener("click", e._wf.openChat),
+            //         document.querySelector(".wf-close").addEventListener("click", e._wf.closeChat);
+            // }),
             (e._wf.newForm = (forms) => {
  
             console.log(forms[0].placeholder);
