@@ -20,6 +20,7 @@
 <div id="container">
   <canvas id="video-com-flip" width="640" height="480"></canvas>
   <div id="tecla"></div>
+  <div id="tecla2"></div>
 </div>
 
 
@@ -39,6 +40,15 @@ div#tecla{
   background:red;
   top: 80px;
   left: 80px;
+}
+div#tecla2{
+  /* display: block; */
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background:red;
+  top: 80px;
+  left: 480px;
 }
 canvas#video-com-flip{
   position: relative;
@@ -178,6 +188,7 @@ function verificarMovimento(x,y,w,h){
 
 function verificarBotao() {
   let item = $("#tecla");
+  
   //recuperar posição e tamanho do item
   let x=item.offsetLeft, y=item.offsetTop, w=item.offsetWidth, h = item.offsetHeight;
   //checar se a area do botao
@@ -195,11 +206,33 @@ function verificarBotao() {
   }//end if (mediaCorDaArea > 10)s
 }//end checkAreas()
 
+function verificarBotao2() {
+  let item = $("#tecla2");
+  
+  //recuperar posição e tamanho do item
+  let x=item.offsetLeft, y=item.offsetTop, w=item.offsetWidth, h = item.offsetHeight;
+  //checar se a area do botao
+  let mediaCorDaArea = verificarMovimento(x,y,w,h);
+  
+  if (mediaCorDaArea > 10) {
+    //altera a cor do item para azul
+    // item.style.background = "blue";
+    item.style.display = "none";
+    if (typeof voltaCor === 'undefined')
+      voltaCor = null;
+
+    clearTimeout(voltaCor);
+    //daqui a 1s volta a cor do item para vermelho
+    voltarCor = setTimeout(function(){item.style.display="block";},1000);
+  }//end if (mediaCorDaArea > 10)s
+}//end checkAreas()
+
 const atualizacao =  setInterval(function(){
   //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
   contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
   atualizarMapaDeMovimento();
   verificarBotao();
+  verificarBotao2();
 },1000/40);// end setInterval atualizacao
 
 
