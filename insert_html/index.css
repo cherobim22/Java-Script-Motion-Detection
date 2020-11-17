@@ -1,8 +1,16 @@
 .modal-container{
+    /* height: 100vh; */
+    /* display: none; */
+    width: 100vw; 
     height: 100vh;
-    display: none;
-    justify-content: flex-end;
-    align-items:flex-end;
+
+    position: fixed;
+    top:0px;
+    left: 0px;
+    z-index: 2000;
+    justify-content: center;
+    background-color: #ccc;
+    align-items:center;
     /* border: 1px solid black; */
 }
 
