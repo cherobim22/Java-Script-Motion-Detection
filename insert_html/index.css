@@ -1,4 +1,4 @@
-.modal-container{
+.popup-container{
     /* height: 100vh; */
     /* display: none; */
     width: 100vw; 
@@ -21,7 +21,7 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-.modal {
+.popup {
     margin-bottom: 10px;
     /* border: 1px solid black; */
     border-radius: 10px;
@@ -30,10 +30,10 @@ input:-webkit-autofill:active {
     /* padding: 12px; */
     
 } 
-.modal #formulario{
+.popup #formulario{
     padding: 10px;
 }
-.modal span{
+.popup span{
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     margin-bottom: 10px;
     margin-left: 1%;
@@ -59,7 +59,7 @@ div#form-inputs{
     justify-content: center;
 
 }
-#form-inputs label, #fechar_modal{
+#form-inputs label, #fechar_popup{
     /* color: red; */
     /* font-weight: bold; */
     color: #1f334b;
@@ -68,7 +68,7 @@ div#form-inputs{
     font-size: 20px;
 }
 
-.modal span, .modal #fechar_modal {
+.popup span, .popup #fechar_popup {
     font-family:cursive;
     /* color: white; */
     font-size: 20px;
@@ -90,7 +90,7 @@ input::placeholder {
     opacity: 0.6;
 }
 
-.modal-container.mostrar{
+.popup-container.mostrar{
     display: flex;
 }
 
@@ -121,7 +121,7 @@ input::placeholder {
     text-decoration: none;
 }
     
-.modal-header{
+.popup-header{
  
     /* height: 40px;
     border-radius: 5px 5px 0 0;
@@ -129,7 +129,7 @@ input::placeholder {
     padding: 4px; 
 }
 
-.modal-header span{
+.popup-header span{
     margin-top: 10%;
     margin-left: 35%;
     color: #1f334b;
