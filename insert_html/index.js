@@ -160,8 +160,6 @@
             var form_elements = [];
         
             for(let i = 0; i< forms.length; i++){
-                // const name = forms[i].name;
-                // const new_name = name[0].toUpperCase() + name.substr(1);
 
                 if(forms[i].type != 'button' && forms[i].name != 'telefone'){
                      if(forms[i].required == 'true'){
