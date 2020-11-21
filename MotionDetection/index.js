@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
         clearTimeout(voltaCor);
         //daqui a 1s volta a cor do item para vermelho
-        voltarCor = setTimeout(function(){item.style.display="block";},1000);
+        voltarCor = setTimeout(function(){item.style.display="block"; },1000);
       }//end if (mediaCorDaArea > 10)s
     }//end checkAreas()
     
