@@ -11,7 +11,8 @@
                <span>{{title}}</span>
                 <button class="fechar" id="fechar_popup">x</button> 
             </div>
-            <form id="formulario">
+            <small id="popMsg" style="display: none;"></small>
+            <form id="formulario" autocomplete="off" onsubmit="event.preventDefault(); gpop.addNewLead()">
                 <div id="form-inputs">
                   
                 </div>
