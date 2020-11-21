@@ -135,3 +135,45 @@ input::placeholder {
     color: #1f334b;
     opacity: 0.9;
 }
+
+div#titulo {
+    /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    opacity: 0.9;
+}
+
+select#selectG {
+    margin-top: 3%;
+    width: 102%;
+    height: 32px;
+    border-radius: 5px;
+    border-color: #ccc;
+}
+
+#selectG option{
+    color: #333;
+    opacity: 0.7;
+}
+
+#selectG option:checked{
+    /* font-weight: bold; */
+    display:none;
+}
+
+select#selectG:hover {
+    border-color: #2ecc92;
+}
+
+small#popMsg {
+    /* border: 1px solid; */
+    padding: 4px;
+    width: 100%;
+    color: red;
+    font-size: medium;
+   
+    /* align-items: center; */
+}
