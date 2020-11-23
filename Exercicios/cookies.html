@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Lucas Cherobim -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+</head>
+<body>
+    <script>
+        //Cria o cookie
+        // document.cookie = "popup = aberto";
+        // document.cookie = "popup-click = aberto";
+
+        //atualiza o cookie
+        // document.cookie = "popup = fechado";
+        // document.cookie = "popup-click = fechado";
+
+        //remove o cookie
+        // document.cookie = "popup-click = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"; 
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+        return "";
+        }
+
+        const a = getCookie('popup');
+
+        if(a != "aberto"){
+            document.cookie = "popup = aberto";
+        }else {
+            document.cookie = "popup = fechado";
+        }
+        console.log(document.cookie);
+        
+    </script>
+</body>
+</html>
