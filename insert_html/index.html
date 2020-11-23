@@ -5,16 +5,15 @@
     <!-- <meta name="viewport" content="width=<device-width>, initial-scale=1.0"> -->
 </head>
 <body>
-    <div id="popup-promocao" class="popup-container mostrar">
-        <div class="popup">
-            <div class="popup-header">
-               <span>{{title}}</span>
-                <button class="fechar" id="fechar_popup">x</button> 
+    <div id="popup-promocao" class="popup-container ">
+        <div class="popup" >
+            <button class="fechar" id="fechar_popup">x</button> 
+            <div id="titulo">
+                <span>{{title}}</span>
             </div>
-            <small id="popMsg" style="display: none;"></small>
+            <small id="popMsg" style="display: none;">{{erro}}</small>
             <form id="formulario" autocomplete="off" onsubmit="event.preventDefault(); gpop.addNewLead()">
                 <div id="form-inputs">
-                  
                 </div>
             </form>
         </div>
