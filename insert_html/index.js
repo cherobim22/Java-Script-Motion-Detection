@@ -36,15 +36,19 @@
             popup.addEventListener('click', (e) => {
                 if(e.target.className == 'fechar'){
                     popup.classList.remove('mostrar');
+                    document.cookie = "popup = true";
                 }
             });  
 
+            // const cookieP = gpop.getCookie('popup');
+            // document.cookie = "popup = false";
+            // console.log(cookieP);
+
             if(data.scroll == "on"){
                 document.body.onscroll = () => {
-                    if(localStorage.pop_up_g != 1){
+                    if(gpop.getCookie('popup') != "true"){
                         setTimeout(() => {
                             popup.classList.add('mostrar');
-                            localStorage.pop_up_g = 1;   
                         }, 3000)
                     }
                 }
@@ -52,8 +56,7 @@
 
             if(data.leave == "on"){
                 document.body.onmouseleave = () => {
-                    // console.log("over");
-                    if(localStorage.pop_up_g != 1){
+                    if(gpop.getCookie('popup') != "true"){
                         setTimeout(() => {
                             popup.classList.add('mostrar');
                             localStorage.pop_up_g = 1;   
@@ -63,15 +66,27 @@
             }
 
             window.onbeforeunload = function(event) {
-                localStorage.removeItem('pop_up_g');
-                localStorage.removeItem('pop_up_gd');
+                document.cookie = "popup = false";
             }
             
             document.getElementById("formulario").addEventListener('submit', e.gpop.addNewLead);
+        }),
+        (e.gpop.getCookie = (cname) => {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
 
-           
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
             
-
+            return "";
         }),
         (e.gpop.openPopup = async () => {
             const d = document.querySelector("#gdpop").dataset;
@@ -304,7 +319,7 @@
         })),
         (e.gpop.loadTemplate = () =>
             new Promise((e) => {
-                fetch("https://testeallan.gpages.com.br/FormPopUp/index.html", { method: "GET" })
+                fetch("index.html", { method: "GET" })
                     .then(async (t) => {
                         let n = await t.text();
                         e(n);
@@ -315,7 +330,7 @@
         })),
         (e.gpop.injectBaseCss = (e) =>
             new Promise((t) => {
-                fetch("https://testeallan.gpages.com.br/FormPopUp/index.css", { method: "GET" })
+                fetch("index.css", { method: "GET" })
                     .then(async (n) => {
                         let a = await n.text(),
                             o = e.createElement("style");
