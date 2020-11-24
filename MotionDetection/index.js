@@ -2,7 +2,6 @@
 //o código que estará aqui dentro só será mostrado depois que página carregar
 document.addEventListener("DOMContentLoaded", function(){
    
-
     //evitar document.querySelector();
     window.$ = (query, ctx = document) => ctx.querySelector(query);
     
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
         dadosMapa[4*i+3] = 0xFF;//255 em hexadecimal
         ++i;
       }
-      console.log(dadosMapa.length);
+      // console.log(dadosMapa.length);
     }
     
     
@@ -121,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function(){
       let x=item.offsetLeft, y=item.offsetTop, w=item.offsetWidth, h = item.offsetHeight;
       //checar se a area do botao
       let mediaCorDaArea = verificarMovimento(x,y,w,h);
+      console.log(mediaCorDaArea);
       
       if (mediaCorDaArea > 10) {
         //altera a cor do item para azul
@@ -160,7 +160,8 @@ document.addEventListener("DOMContentLoaded", function(){
       contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
       atualizarMapaDeMovimento();
       verificarBotao();
-      verificarBotao2();
+    
+      // verificarBotao2();
     },1000/40);// end setInterval atualizacao
     
     
