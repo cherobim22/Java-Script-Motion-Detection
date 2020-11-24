@@ -66,7 +66,8 @@
             }
 
             window.onbeforeunload = function(event) {
-                document.cookie = "popup = false";
+                // document.cookie = "popup = false";
+                 document.cookie = "popup-click = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"; 
             }
             
             document.getElementById("formulario").addEventListener('submit', e.gpop.addNewLead);
