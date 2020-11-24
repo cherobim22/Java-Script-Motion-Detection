@@ -7,64 +7,29 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="font/material-icons.css"> 
+  <link rel="stylesheet" href="index.css">
 </head>
 <body> 
+  <!-- <header>OLAAAAAAAAAAAAAAAAAAAAAAAAAA</header> -->
+  <video id="video" autoplay width="600" height="400"></video>
 
-<video id="video" autoplay width="640" height="480"></video>
+  <div id="container">
+    <canvas id="video-com-flip" width="600" height="400"></canvas>
+    <div id="tecla"></div>
+    <div id="tecla2"></div>
+  </div>
+  <div id="container">
+    <canvas id="video-com-flip" width="600" height="400"></canvas>
+    <div id="teto">
+     <h3>perguntas aqui </h3>
+    </div>
+    <div id="tecla"></div>
+    <div id="tecla2"></div>
+  </div>
 
-<div id="container">
-  <canvas id="video-com-flip" width="640" height="480"></canvas>
-  <div id="tecla"></div>
-  <div id="tecla2"></div>
-</div>
 
-<canvas id="mapa-de-movimento" width="640" height="480"></canvas>
 
-<style type="text/css">
-div#container{
-  position: absolute;
-  border: 2px;
-}
-div#tecla{
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background:red;
-  top: 80px;
-  left: 80px;
-}
-div#tecla2{
-  /* display: block; */
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background:red;
-  top: 80px;
-  left: 480px;
-}
-canvas#video-com-flip{
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-/*
-canvas#mapa-de-movimento{
-  visibility: hidden;
-}
-
-#video{
-  visibility: hidden;
-}*/
-</style>
+  <canvas id="mapa-de-movimento" width="600" height="400"></canvas>
 <script src="index.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-
 </body>
 </html>
