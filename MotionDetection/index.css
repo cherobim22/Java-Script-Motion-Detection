@@ -18,11 +18,10 @@ div#teto{
   div#tecla{
     position: absolute;
     width: 70px;
-    height: 200px;
+    height: 70px;
     background:red;
-    /* /* top: 80px; */
-      bottom: 25px; 
-    left: 10px;
+    top: 80px;
+    left: 80px;
   }
   div#tecla2{
     /* display: block; */
