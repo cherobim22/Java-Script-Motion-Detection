@@ -11,25 +11,44 @@
 </head>
 <body> 
   <!-- <header>OLAAAAAAAAAAAAAAAAAAAAAAAAAA</header> -->
-  <video id="video" autoplay width="600" height="400"></video>
+  <video  id="video" autoplay width="600" height="400"></video>
 
+  
   <div id="container">
-    <canvas id="video-com-flip" width="600" height="400"></canvas>
-    <div id="tecla"></div>
-    <div id="tecla2"></div>
-  </div>
-  <div id="container">
-    <canvas id="video-com-flip" width="600" height="400"></canvas>
-    <div id="teto">
-     <h3>perguntas aqui </h3>
+    <div>
+      <canvas id="video-com-flip" width="600" height="400"></canvas>
+      <div id="questions"><span id="quest"></span></div>
+      <div id="start"></div>
+      <div id="tecla"></div>
+      <div id="tecla2"></div>
     </div>
-    <div id="tecla"></div>
-    <div id="tecla2"></div>
+    <!-- <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+      Your browser does not support the HTML canvas tag.</canvas> -->
   </div>
-
-
 
   <canvas id="mapa-de-movimento" width="600" height="400"></canvas>
+
+  <!-- <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Hello World",10,50);
+    </script> -->
+ 
 <script src="index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<script>
+  //   $("#start").click(()=>{
+  //   const quest = $("#questions");
+  //   const start = $("#start");
+  //   console.log("click start");
+  //   quest.style.display = "block";
+  //   start.style.display = "none";
+  // });
+</script>
+
+
 </body>
 </html>
