@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function(){
   contextoVideoComFlip.translate(videoComFlip.width, 0);
   contextoVideoComFlip.scale(-1, 1);
   
-  
   //retorna o valor absoluto do numero (Math.abs)
   function valorAbsoluto(valor) {
     return (valor ^ (valor >> 31)) - (valor >> 31);
@@ -50,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function(){
     return (valor > 0x15) ? 0xFF : 0;
     //return (valor > 21) ? 255 : 0;
   }
-  
   
   //cria a imagem preto e branco que representa o movimento
   function montarMapaDeMovimento(dadosMapa, dadosImgAtual, dadosImgAntiga) {
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
       dadosMapa[4*i+3] = 0xFF;//255 em hexadecimal
       ++i;
     }
-    console.log(dadosMapa.length);
+    // console.log(dadosMapa.length);
   }
   
   
@@ -120,14 +118,16 @@ document.addEventListener("DOMContentLoaded", function(){
     let mediaCorDaArea = verificarMovimento(x,y,w,h);
     
     if (mediaCorDaArea > 10) {
-      //altera a cor do item para azul
-      item.style.background = "blue";
-      if (typeof voltaCor === 'undefined')
-        voltaCor = null;
+       //altera a cor do item para azul
+      // item.style.background = "blue";
+      // // console.log("eu ja")
+      // if (typeof voltaCor === 'undefined')
+      //   voltaCor = null;
   
-      clearTimeout(voltaCor);
-      //daqui a 1s volta a cor do item para vermelho
-      voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      // clearTimeout(voltaCor);
+      // //daqui a 1s volta a cor do item para vermelho
+      // voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      return "true";
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
 
@@ -140,23 +140,66 @@ document.addEventListener("DOMContentLoaded", function(){
     
     if (mediaCorDaArea > 10) {
       //altera a cor do item para azul
-      item.style.background = "blue";
-      if (typeof voltaCor === 'undefined')
-        voltaCor = null;
+      // item.style.background = "blue";
+      // // console.log("eu ja")
+      // if (typeof voltaCor === 'undefined')
+      //   voltaCor = null;
   
-      clearTimeout(voltaCor);
-      //daqui a 1s volta a cor do item para vermelho
-      voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      // clearTimeout(voltaCor);
+      // //daqui a 1s volta a cor do item para vermelho
+      // voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      return "false";
+
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
   
+  function game() {
+    const a = verificarBotao();
+    const b = verificarBotao2();
+    const q = document.getElementById("quest");
+
+    const perguntas = [
+      "primeira pergunta",
+      "segunda pergunta",
+      "terceira pergunta"
+    ];
+
+    if(a ===  "true"){
+      console.log("eu nunca");
+    }
+    if(b ===  "false"){
+      console.log("eu ja");
+    }
+
+  }
+
   const atualizacao =  setInterval(function(){
     //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
     contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
     atualizarMapaDeMovimento();
-    verificarBotao();
-    verificarBotao2();
+    // verificarBotao();
+    // game();
+    // verificarBotao2();
   },1000/40);// end setInterval atualizacao
+
+  document.getElementById("start").addEventListener("click", ()=>{
+    
+      const quest = document.getElementById("questions");
+      const start = document.getElementById("start");
+      console.log("click start");
+      quest.style.display = "block";
+      start.style.display = "none";
+      game();
+   
+  });
+  // $("#start").click(()=>{
+  //   const quest = $("#quest");
+  //   const start = $("#start");
+  //   console.log("click start");
+  //   quest.show();
+  //   start.hide();
+  // });
+
   
   
   });//domcontent load
