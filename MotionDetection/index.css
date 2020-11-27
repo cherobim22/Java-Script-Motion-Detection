@@ -15,22 +15,51 @@ div#teto{
     top: 0px;
     left: 0px;
   }
+  div#questions{
+    display: none;
+    position: absolute;
+    width: 450px;
+    height: 40px;
+    background:white;
+    top: 15px;
+    left: 75px;
+  }
+  #questions span{
+   
+    /* font-family: 'Anton', sans-serif; */
+    
+    font-weight: bold;
+    /* -webkit-text-stroke: 1px white; */
+    font-size: 28px; 
+    color: blue;
+
+  }
+
+  div#start{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:red;
+    top: 200px;
+    left: 260px;
+  }
+
   div#tecla{
     position: absolute;
     width: 70px;
     height: 70px;
     background:red;
-    top: 80px;
-    left: 80px;
+    top: 0px;
+    left: 0px;
   }
   div#tecla2{
     /* display: block; */
     position: absolute;
     width: 70px;
-    height: 200px;
+    height: 70px;
     background:red;
     /* top: 80px; */
-    bottom: 5px;
+    top: 0px;
     right: 0px;
   }
   canvas#video-com-flip{
