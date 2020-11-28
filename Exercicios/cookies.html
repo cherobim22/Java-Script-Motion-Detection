@@ -19,6 +19,17 @@
         //remove o cookie
         // document.cookie = "popup-click = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"; 
 
+        function setCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                // console.log(date.setHours(date.getTime()-1));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
         function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
@@ -32,16 +43,19 @@
                 return c.substring(name.length, c.length);
                 }
             }
-        return "";
+         return "";
         }
 
-        const a = getCookie('popup');
-
-        if(a != "aberto"){
-            document.cookie = "popup = aberto";
-        }else {
-            document.cookie = "popup = fechado";
+        function deleteCookie(name) {   
+            document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         }
+        const b = setCookie("teste", "false", 1);
+        const a = getCookie("teste");
+
+        setTimeout(()=>{
+            deleteCookie("teste");
+        },3000)
+
         console.log(document.cookie);
         
     </script>
