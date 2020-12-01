@@ -118,16 +118,17 @@ document.addEventListener("DOMContentLoaded", function(){
     let mediaCorDaArea = verificarMovimento(x,y,w,h);
     
     if (mediaCorDaArea > 10) {
-       //altera a cor do item para azul
+      //altera a cor do item para azul
       // item.style.background = "blue";
       // // console.log("eu ja")
       // if (typeof voltaCor === 'undefined')
       //   voltaCor = null;
-  
+      console.log("eu ja");
       // clearTimeout(voltaCor);
       // //daqui a 1s volta a cor do item para vermelho
       // voltarCor = setTimeout(function(){item.style.background="red";},1000);
       return "true";
+
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
 
@@ -140,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
     if (mediaCorDaArea > 10) {
       //altera a cor do item para azul
+      console.log("eu nunca");
       // item.style.background = "blue";
       // // console.log("eu ja")
       // if (typeof voltaCor === 'undefined')
@@ -153,33 +155,18 @@ document.addEventListener("DOMContentLoaded", function(){
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
   
-  function game() {
-    const a = verificarBotao();
-    const b = verificarBotao2();
-    const q = document.getElementById("quest");
 
-    const perguntas = [
-      "primeira pergunta",
-      "segunda pergunta",
-      "terceira pergunta"
-    ];
-
-    if(a ===  "true"){
-      console.log("eu nunca");
-    }
-    if(b ===  "false"){
-      console.log("eu ja");
-    }
-
-  }
 
   const atualizacao =  setInterval(function(){
     //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
     contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
     atualizarMapaDeMovimento();
-    // verificarBotao();
-    // game();
-    // verificarBotao2();
+  
+    verificarBotao();
+    verificarBotao2();
+
+   
+
   },1000/40);// end setInterval atualizacao
 
   document.getElementById("start").addEventListener("click", ()=>{
@@ -189,17 +176,9 @@ document.addEventListener("DOMContentLoaded", function(){
       console.log("click start");
       quest.style.display = "block";
       start.style.display = "none";
-      game();
+
+
    
   });
-  // $("#start").click(()=>{
-  //   const quest = $("#quest");
-  //   const start = $("#start");
-  //   console.log("click start");
-  //   quest.show();
-  //   start.hide();
-  // });
 
-  
-  
   });//domcontent load
