@@ -44,7 +44,6 @@ const carrinho = [
     const qtdMaiorQueZero = item => item.qtde > 0 
     const totalItem = item => item.qtde * item.preco
     const somar  = (a,b) => a + b
-
     const resultado = carrinho
         .meuFilter(qtdMaiorQueZero)
         .meuMap(totalItem)
