@@ -11,10 +11,10 @@
         function setCookie(name,value,days) {
             var expires = "";
             if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
+                // var date = new Date();
+                // date.setTime(date.getTime() + (days*24*60*60*1000));
                 // console.log(date.setHours(date.getTime()-1));
-                expires = "; expires=" + date.toUTCString();
+                expires = "; expires=" + days.toUTCString();
             }
             document.cookie = name + "=" + (value || "")  + expires + "; path=/";
         }
@@ -34,18 +34,31 @@
             }
          return "";
         }
+        var data = new Date();
+        var dia = data.getDate();
+        var mes = data.getMonth()+1;
+        var ano = data.getFullYear();
+        var hora = data.getHours();
+        var aux = 23 - hora;
+        var h = hora + aux;
+        // console.log(h);
+        var minuto = data.getMinutes();
+        var aux = 60 - minuto;
+        var m = minuto + aux;
+        var d = new Date(ano,mes-1,dia,h,m);
 
-        function deleteCookie(name) {   
-            document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        }
-        const b = setCookie("teste", "false", 1);
+        // function deleteCookie(name) {   
+        //     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        // }
+        const b = setCookie("teste", "false", d);
         const a = getCookie("teste");
 
-        setTimeout(()=>{
-            deleteCookie("teste");
-        },3000)
+        // setTimeout(()=>{
+        //     deleteCookie("teste");
+        // },3000)
 
         console.log(document.cookie);
+        console.log(a);
         
     </script>
 </body>
