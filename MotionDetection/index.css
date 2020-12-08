@@ -16,7 +16,7 @@ div#teto{
     left: 0px;
   }
   div#questions{
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 450px;
     height: 40px;
