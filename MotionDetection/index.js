@@ -117,17 +117,17 @@ document.addEventListener("DOMContentLoaded", function(){
     //checar se a area do botao
     let mediaCorDaArea = verificarMovimento(x,y,w,h);
     
-    if (mediaCorDaArea > 10) {
+    if (mediaCorDaArea > 12) {
       //altera a cor do item para azul
-      // item.style.background = "blue";
-      // // console.log("eu ja")
-      // if (typeof voltaCor === 'undefined')
-      //   voltaCor = null;
-      console.log("eu ja");
-      // clearTimeout(voltaCor);
+      item.style.background = "blue";
+      // console.log("eu ja")
+      if (typeof voltaCor === 'undefined')
+        voltaCor = null;
+      // console.log("eu ja");
+      clearTimeout(voltaCor);
       // //daqui a 1s volta a cor do item para vermelho
-      // voltarCor = setTimeout(function(){item.style.background="red";},1000);
-      return "true";
+      voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      return "eu_ja";
 
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
@@ -141,44 +141,98 @@ document.addEventListener("DOMContentLoaded", function(){
     
     if (mediaCorDaArea > 10) {
       //altera a cor do item para azul
-      console.log("eu nunca");
-      // item.style.background = "blue";
-      // // console.log("eu ja")
-      // if (typeof voltaCor === 'undefined')
-      //   voltaCor = null;
+      // console.log("eu nunca");
+      item.style.background = "blue";
+      // console.log("eu ja")
+      if (typeof voltaCor === 'undefined')
+        voltaCor = null;
   
-      // clearTimeout(voltaCor);
-      // //daqui a 1s volta a cor do item para vermelho
-      // voltarCor = setTimeout(function(){item.style.background="red";},1000);
-      return "false";
+      clearTimeout(voltaCor);
+      //daqui a 1s volta a cor do item para vermelho
+      voltarCor = setTimeout(function(){item.style.background="red";},1000);
+      return "eu_nunca";
 
     }//end if (mediaCorDaArea > 10)s
   }//end checkAreas()
   
+  var quests = [
+    "Você ja deu delete sem where ???",
+    "Você ja fez um for infinito ??",
+    "Ja se deu mal em alguma prova ??",
+    "Ja programou em assembly ?? ",
+    "pergunta 5"
+  ]
 
-
-  const atualizacao =  setInterval(function(){
+  var cont = 0;
+  var escolhas = []
+  const atualizacao = setInterval(function(){
     //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
     contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
     atualizarMapaDeMovimento();
-  
-    verificarBotao();
-    verificarBotao2();
+   var a = verificarBotao();
+    var b = verificarBotao2();
 
-   
+    if (a === "eu_ja"){
+    //  console.log(a)
+     cont = cont+1;
+      if(cont<=10){
+        document.getElementById("questions").textContent = quests[0]
+        if (cont === 9){
+          escolhas[0]= "eu_ja";
+        }
+      }
+      if(cont>10 && cont<=20){
+        document.getElementById("questions").textContent = quests[1]
+        if (cont === 19){
+          escolhas[1]= "eu_ja";
+        }
+      }
+      if(cont>20 && cont<=30){
+        document.getElementById("questions").textContent = quests[2]
+        if (cont === 29){
+          escolhas[2]= "eu_ja";
+        }
+      }
+      if(cont>30 && cont<=40){
+        document.getElementById("questions").textContent = quests[3]
+        if (cont === 39){
+          escolhas[3]= "eu_ja";
+        }
+      }
+    }
 
-  },1000/40);// end setInterval atualizacao
+    if (b === "eu_nunca"){
+      //  console.log(a)
+       cont = cont+1;
+        if(cont<=10){
+          document.getElementById("questions").textContent = quests[0]
+          if (cont === 9){
+            escolhas[0]= "eu_nunca";
+          }
+        }
+        if(cont>10 && cont<=20){
+          document.getElementById("questions").textContent = quests[1]
+          if (cont === 19){
+            escolhas[1]= "eu_nunca";
+          }
+        }
+        if(cont>20 && cont<=30){
+          document.getElementById("questions").textContent = quests[2]
+          if (cont === 29){
+            escolhas[2]= "eu_nunca";
+          }
+        }
+        if(cont>30 && cont<=40){
+          document.getElementById("questions").textContent = quests[3]
+          if (cont === 39){
+            escolhas[3]= "eu_nunca";
+          }
+        }
+      }
 
-  document.getElementById("start").addEventListener("click", ()=>{
+      if(escolhas.length === 4){
+        document.getElementById("questions").textContent = "1 => "+escolhas[0]+" 2 => "+escolhas[1]+" 3 => "+escolhas[2]+" 4 => "+escolhas[3];
+      }
     
-      const quest = document.getElementById("questions");
-      const start = document.getElementById("start");
-      console.log("click start");
-      quest.style.display = "block";
-      start.style.display = "none";
-
-
-   
-  });
-
+  },1000/40);// end setInterval atualizacao
   });//domcontent load
