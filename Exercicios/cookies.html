@@ -11,9 +11,6 @@
         function setCookie(name,value,days) {
             var expires = "";
             if (days) {
-                // var date = new Date();
-                // date.setTime(date.getTime() + (days*24*60*60*1000));
-                // console.log(date.setHours(date.getTime()-1));
                 expires = "; expires=" + days.toUTCString();
             }
             document.cookie = name + "=" + (value || "")  + expires + "; path=/";
@@ -26,14 +23,28 @@
             for(var i = 0; i <ca.length; i++) {
                 var c = ca[i];
                 while (c.charAt(0) == ' ') {
-                c = c.substring(1);
+                     c = c.substring(1);
                 }
                 if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
+                    return c.substring(name.length, c.length);
                 }
             }
          return "";
         }
+
+        function checkCookie(name) {
+            var user = getCookie(name);
+            if (user === d) {
+               return true;
+            } else {
+                // user = prompt("Please enter your name:","");
+                // if (user != "" && user != null) {
+                // setCookie("username", user, 30);
+                // }
+                return false;
+            }
+        }
+
         var data = new Date();
         var dia = data.getDate();
         var mes = data.getMonth()+1;
@@ -50,16 +61,34 @@
         // function deleteCookie(name) {   
         //     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         // }
-        const b = setCookie("teste", "false", d);
-        const a = getCookie("teste");
+       
+        var a = getCookie("teste");
 
         // setTimeout(()=>{
         //     deleteCookie("teste");
         // },3000)
 
-        console.log(document.cookie);
+        // console.log(d);
         console.log(a);
+
+        if (a.length != 0){ //se o cookie for != 0, eu seto o valor do cookie como a hora de acesso
+            a = new Date(d)
+            console.log("cookie != 0 " + a); 
+        }else{ //se o cookie for == 0 (então não existe cookie, ou expirou), então eu seto o valor e expires do cookie com a hora final do contador
+            a = new Date()
+            console.log("cookie === 0 " + a); 
+            var b = setCookie("teste", d, d);
+        }
         
     </script>
+    <script id="gdpop" 
+    data-public-auth="" 
+    data-form-title="teste cherobim" 
+    data-button-text="cadastre-se"  
+    data-form-id="35744" 
+    data-scroll="on" 
+    data-leave="on" 
+    data-click="off" 
+    src="https://gdigital.gpages.com.br/FormPopUp/index.js"></script>
 </body>
 </html>
