@@ -1,3 +1,4 @@
+//data
 var d = new Date();
 console.log(d.getDate());//dia do mes
 console.log(d.getHours());//resgata o horario
