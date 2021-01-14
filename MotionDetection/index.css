@@ -1,78 +1,63 @@
 div#container{
-    position: absolute;
-    border: 2px;
-
+  position: absolute;
+  border: 2px;
+  z-index: 99999;
 }
 
-div#teto{
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    /* background:red; */
-    top: 0px;
-    left: 0px;
-  }
-  div#questions{
-    /* display: none; */
-    position: absolute;
-    width: 450px;
-    height: 40px;
-    background:white;
-    top: 15px;
-    left: 75px;
-  }
-  #questions span{
-   
-    /* font-family: 'Anton', sans-serif; */
-    
-    font-weight: bold;
-    /* -webkit-text-stroke: 1px white; */
-    font-size: 28px; 
-    color: blue;
+div#questions{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 19px;
+  width: 450px;
+  height: 40px;
+  background:white;
+  top: 15px;
+  left: 75px;
+}
 
-  }
+body{
+  background-color: #1f334b;
+}
+ 
+div#tecla{
+  border-radius: 19px;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background:red;
+  top: 0px;
+  left: 0px;
+}
 
-  div#start{
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background:red;
-    top: 200px;
-    left: 260px;
-  }
+div#tecla2{
+  border-radius: 19px;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background:red;
+  top: 0px;
+  right: 0px;
+}
+canvas#video-com-flip{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+video{
+  display: none;
+}
+#mapa-de-movimento{
+  display: none;
+}
 
-  div#tecla{
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background:red;
-    top: 0px;
-    left: 0px;
-  }
-  div#tecla2{
-    /* display: block; */
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background:red;
-    /* top: 80px; */
-    top: 0px;
-    right: 0px;
-  }
-  canvas#video-com-flip{
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  /*
-  canvas#mapa-de-movimento{
-    visibility: hidden;
-  }
-  
-  #video{
-    visibility: hidden;
-  }*/
+.content{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
