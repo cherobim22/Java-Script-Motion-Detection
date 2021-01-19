@@ -40,6 +40,15 @@ div#tecla2{
   top: 0px;
   right: 0px;
 }
+div#tecla3{
+  border-radius: 19px;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background:red;
+  top: 120px;
+  right: 120px;
+}
 canvas#video-com-flip{
   position: relative;
   top: 0;
