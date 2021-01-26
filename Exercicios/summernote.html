@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>without bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+  </head>
+  <body>
+      <div id="teste">
+          <div id="summernote"></div>
+      </div>
+
+
+
+      <h1><a href="http://localhost:8080/?blog_id=3491&access_from=unsubscribe" target="_blanck">email</a> </h1>
+      <h1><a href="http://localhost:8080/?blog_id=3491&access_from=lgpd" target="_blanck">preview</a> </h1>
+    
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+        //   ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
+  </body>
+</html>
