@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Lucas Cherobim -->
+        <!-- Eu ja / Eu nunca -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <link rel="stylesheet" href="index.css"> -->
+      </head>
+      <body> 
+        <video id="video" autoplay width="600" height="400"></video>
+        <div class="content">
+          <div id="container">
+            <canvas id="video-com-flip" width="600" height="400"></canvas>
+            <!-- <div id="questions"><span id="quest"></span></div> -->
+            <div id="tecla"></div>
+            <div id="tecla2"></div>
+            <div id="tecla3"></div>
+            <div id="tecla4"></div>
+          </div>
+        </div>
+      
+        <canvas id="mapa-de-movimento" width="600" height="400"></canvas>
+      
+      
+        <script src="fase2.js"></script>
+      <a href="./WordAd.html">voltar</a>
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+      
+      </body>
+<style>
+div#container{
+    position: absolute;
+    border: 2px;
+    z-index: 99999;
+  }
+  
+  div#questions{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 19px;
+    width: 450px;
+    height: 40px;
+    background:white;
+    top: 15px;
+    left: 75px;
+  }
+  
+  body{
+    background-color: #1f334b;
+  }
+   
+  div#tecla{
+    border-radius: 19px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:red;
+    top: 0px;
+    left: 0px;
+  }
+  
+  div#tecla2{
+    border-radius: 19px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:red;
+    top: 0px;
+    right: 0px;
+  }
+  div#tecla3{
+    border-radius: 19px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:red;
+    top: 0px;
+    right: 120px;
+  }
+
+  div#tecla4{
+    
+    border-radius: 19px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:red;
+    opacity: 0.8;
+    top: 0px;
+    right: 120px;
+    top:0px;
+    right: 320px;
+  }
+
+  canvas#video-com-flip{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  video{
+    display: none;
+  }
+  #mapa-de-movimento{
+    display: none;
+  }
+  
+  .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+</style>
+<script>
+
+</script>
+</html>

@@ -163,9 +163,7 @@ document.addEventListener("DOMContentLoaded", function(){
         cont= cont+1;
         console.log(cont)
         if(cont === 2){
-            setTimeout(()=>{
-                 location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
-            },2000)
+           alert("acertou")
            
         }
       
