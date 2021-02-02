@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("tocou no circulo")
         cont= cont+1;
         console.log(cont)
-        if(cont === 2){
+        if(cont === 3){
             setTimeout(()=>{
                  location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
             },2000)
