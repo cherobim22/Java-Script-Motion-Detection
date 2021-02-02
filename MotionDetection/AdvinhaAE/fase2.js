@@ -159,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     if(d === "true"){
-        console.log("tocou no circulo")
+        console.log("tocou no corretp")
         cont= cont+1;
         console.log(cont)
-        if(cont === 2){
+        if(cont === 3){
            alert("acertou")
            
         }
