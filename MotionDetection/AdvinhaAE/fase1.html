@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <!-- Lucas Cherobim -->
+  <!-- Eu ja / Eu nunca -->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body> 
+  <video  id="video" autoplay width="600" height="400"></video>
+ <div class="menu">
+  <span>Observe a imagem e toque na forma que se difere das outras</span>
+ </div>
+ <div class="content">
+    
+    <div id="container">
+      <canvas id="video-com-flip" width="600" height="400"></canvas>
+      <!-- <div id="questions"><span id="quest"></span></div> -->
+      <div id="tecla"></div>
+      <div id="tecla2"></div>
+      <div id="tecla3"></div>
+      <div id="tecla4"></div>
+      
+    </div>
+    <div class="countdown">
+        <span id="tempo"></span>
+    </div>
+ 
+  </div>
+
+  <canvas id="mapa-de-movimento" width="600" height="400"></canvas>
+
+
+  <script   src="index.js"></script>
+  <!-- <script type="module" src="countdown.js"></script> -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+</body>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+.menu{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.menu span{
+  position:absolute;
+  top: 130px;
+  font-size: 28px;
+  color: white;
+}
+#tempo{
+  position: relative;
+  /* top: 110px; */
+  color: white;
+  font-size: 18px;
+  z-index: 9999999;
+  
+}
+.countdown{
+  position: relative;
+    top: 180px;
+    z-index: 9999999;
+    border-radius: 13px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    background-color: black;
+}
+.actualizado {
+    color: red;
+}
+</style>
+<script>
+  // import countdown from 'countdown.js';
+
+var count = 30;
+var tempo = document.getElementById("tempo"); // associar a variável tempo ao elemento
+
+function start() {
+     if (count > 0){
+        count -= 1;
+        if (count == 0) {
+            count = "Atualizado";
+            tempo.classList.add("actualizado"); // adicionar uma classe css para mudar a cor
+        }else if(count < 10){
+            count = "0" + count;
+        }
+        tempo.innerText = count;
+        setTimeout(start, 1000); 
+        // em vez de chamar setTimeout("start();", 100) usa só o nome da função
+        // o setTimeout vai executar a função mesmo sem pores os ()
+    }
+}
+
+start();
+  
+</script>
+</html>
