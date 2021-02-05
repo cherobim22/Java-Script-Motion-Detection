@@ -1,5 +1,8 @@
+//  import countdown from './countdown.js';
+
 document.addEventListener("DOMContentLoaded", function(){
-   
+ 
+  //  countdown();
 
     //evitar document.querySelector();
     window.$ = (query, ctx = document) => ctx.querySelector(query);
