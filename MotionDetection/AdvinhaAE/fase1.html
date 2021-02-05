@@ -93,7 +93,7 @@
 <script>
   // import countdown from 'countdown.js';
 
-var count = 30;
+var count = 10;
 var tempo = document.getElementById("tempo"); // associar a variável tempo ao elemento
 
 function start() {
@@ -101,7 +101,8 @@ function start() {
         count -= 1;
         if (count == 0) {
             count = "Atualizado";
-            tempo.classList.add("actualizado"); // adicionar uma classe css para mudar a cor
+            // tempo.classList.add("actualizado"); // adicionar uma classe css para mudar a cor
+            window.location.replace('fase2.html');
         }else if(count < 10){
             count = "0" + count;
         }
