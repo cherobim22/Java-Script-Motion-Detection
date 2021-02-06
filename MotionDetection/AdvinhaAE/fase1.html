@@ -11,36 +11,48 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body> 
-  <video  id="video" autoplay width="600" height="400"></video>
+  <video  id="video" autoplay width="800" height="500"></video>
  <div class="menu">
-  <span>Observe a imagem e toque na forma que se difere das outras</span>
+  <span>Analise os numeros contidos na imagem e escolha qual é o maior numero</span>
  </div>
  <div class="content">
     
     <div id="container">
-      <canvas id="video-com-flip" width="600" height="400"></canvas>
+      <canvas id="video-com-flip" width="800" height="500"></canvas>
       <!-- <div id="questions"><span id="quest"></span></div> -->
-      <div id="tecla"></div>
-      <div id="tecla2"></div>
-      <div id="tecla3"></div>
-      <div id="tecla4"></div>
+      <div id="tecla" class="target"><span>33</span></div>
+      <div id="tecla2"  class="target"><span>03</span></div>
+      <div id="tecla3"  class="target"><span>23</span></div>
+      <div id="tecla4"  class="target"><span>132</span></div>
       
     </div>
-    <div class="countdown">
+    <div class="options">
+      <div class="life">
+        <img src="heart.svg" alt="">
+        <span>1/3</span>
+      </div>
+      <div class="coins">
+        <img src="money.svg" alt="">
+        <span>1/3</span>
+      </div>
+      <div class="fase">
+        <img src="climb.svg" alt="">
+        <span>2/3</span>
+      </div>
+      <div class="clock">
+        <img src="clock.svg" alt="">
         <span id="tempo"></span>
+      </div>
     </div>
- 
+
   </div>
 
-  <canvas id="mapa-de-movimento" width="600" height="400"></canvas>
-
+  <canvas id="mapa-de-movimento" width="800" height="500"></canvas>
 
   <script   src="index.js"></script>
-  <!-- <script type="module" src="countdown.js"></script> -->
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="countdown.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
@@ -50,70 +62,15 @@
     margin: 0;
     padding: 0;
   }
-.menu{
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid red; */
-}
 
-.menu span{
-  position:absolute;
-  top: 130px;
-  font-size: 28px;
-  color: white;
-}
-#tempo{
-  position: relative;
-  /* top: 110px; */
-  color: white;
-  font-size: 18px;
-  z-index: 9999999;
-  
-}
-.countdown{
-  position: relative;
-    top: 180px;
-    z-index: 9999999;
-    border-radius: 13px;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    height: 30px;
-    justify-content: center;
-    background-color: black;
-}
-.actualizado {
-    color: red;
-}
+  .target span{
+    font-size: 28px;
+    color: #8000FF;
+  }
+
 </style>
 <script>
-  // import countdown from 'countdown.js';
 
-var count = 10;
-var tempo = document.getElementById("tempo"); // associar a variável tempo ao elemento
-
-function start() {
-     if (count > 0){
-        count -= 1;
-        if (count == 0) {
-            count = "Atualizado";
-            // tempo.classList.add("actualizado"); // adicionar uma classe css para mudar a cor
-            window.location.replace('fase2.html');
-        }else if(count < 10){
-            count = "0" + count;
-        }
-        tempo.innerText = count;
-        setTimeout(start, 1000); 
-        // em vez de chamar setTimeout("start();", 100) usa só o nome da função
-        // o setTimeout vai executar a função mesmo sem pores os ()
-    }
-}
-
-start();
   
 </script>
 </html>
