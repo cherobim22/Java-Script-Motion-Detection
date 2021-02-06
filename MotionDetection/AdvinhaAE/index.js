@@ -122,14 +122,14 @@ document.addEventListener("DOMContentLoaded", function(){
       
       if (mediaCorDaArea > 12) {
         //altera a cor do item para azul
-        item.style.background = "blue";
+        item.style.border = '2px solid blue';
         // console.log("eu ja")
         if (typeof voltaCor === 'undefined')
           voltaCor = null;
         // console.log("eu ja");
         clearTimeout(voltaCor);
         // //daqui a 1s volta a cor do item para vermelho
-        voltarCor = setTimeout(function(){item.style.background="red";},1000);
+        voltarCor = setTimeout(function(){item.style.border="none";},1000);
         return "true";
   
       }//end if (mediaCorDaArea > 10)s
@@ -150,29 +150,29 @@ document.addEventListener("DOMContentLoaded", function(){
         var d = verificarBotao( $("#tecla4"));
    
   
-     if(a === "true"){
+    //  if(a === "true"){
          
-         console.log("tocou no a")
-     }
-     if(b === "true"){
-        console.log("tocou no b")
-    }
-    if(c === "true"){
-        console.log("tocou no c")
-    }
+    //      console.log("tocou no a")
+    //  }
+    //  if(b === "true"){
+    //     console.log("tocou no b")
+    // }
+    // if(c === "true"){
+    //     console.log("tocou no c")
+    // }
 
-    if(d === "true"){
-        console.log("tocou no circulo")
-        cont= cont+1;
-        console.log(cont)
-        if(cont === 3){
-            setTimeout(()=>{
-                 location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
-            },2000)
+    // if(d === "true"){
+    //     console.log("tocou no circulo")
+    //     cont= cont+1;
+    //     console.log(cont)
+    //     if(cont === 3){
+    //         setTimeout(()=>{
+    //              location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
+    //         },2000)
            
-        }
+    //     }
       
-    }
+    // }
       
     },1000/40);// end setInterval atualizacao
     });//domcontent load

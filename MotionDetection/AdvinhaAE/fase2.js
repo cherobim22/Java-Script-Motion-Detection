@@ -121,14 +121,14 @@ document.addEventListener("DOMContentLoaded", function(){
       
       if (mediaCorDaArea > 12) {
         //altera a cor do item para azul
-        item.style.background = "blue";
+        item.style.border = '2px solid blue';
         // console.log("eu ja")
         if (typeof voltaCor === 'undefined')
           voltaCor = null;
         // console.log("eu ja");
         clearTimeout(voltaCor);
         // //daqui a 1s volta a cor do item para vermelho
-        voltarCor = setTimeout(function(){item.style.background="red";},1000);
+        voltarCor = setTimeout(function(){item.style.border="none";},1000);
         return "true";
   
       }//end if (mediaCorDaArea > 10)s
