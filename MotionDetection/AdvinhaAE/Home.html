@@ -11,17 +11,32 @@
      <div class="start">
          <img src="questions.svg" alt="">
          <div class="menu">
-             <h1>AdvinhaAE</h1>
+            <h1>AdvinhaAE</h1>
+            <small>Um jogo sério para a prática de lógica aritimética</small>
+        <div class="instructions">
             <br>
-         
-            <span>Siga as instruções e se divirta</span>
+            <li><span>Leia com atenção o que cada fase pede para ser feito.</span></li>
+            <br>
+            <li><span>Utilize o movimento das mãos para interagir com os elementos inseridos na tela.</span></li>
+            <br>
+            <li><span>Você terá um tempo máximo para completar cada fase.</span></li>
+            <br>
+            <li><span>Para passar de fase, selecione o elemento correto na tela.</span></li>
+            <br>
+            <li><span>Siga as instruções e se divirta.</span></li>
+            <br>
+        </div>
          </div>
          <br>
-         <button><a href="/MotionDetection/AdvinhaAE/WordAd.html"> Iniciar</a></button>
+         <button><a href="/MotionDetection/AdvinhaAE/fase1.html"> Aceitar Desafio</a></button>
 
      </div>
 
     </div>
+
+    <!-- aplicar timer em todas as fases, verifcando se o tempo expira e redireciona para outra -->
+    <!-- aplicar os pontos positivos e mostrar em tela e no final -->
+    <!-- aplicar poontos negativos e mostrar em tela e no final -->
    
 </body>
 <style>
@@ -33,6 +48,13 @@
 a{
     text-decoration: none;
     color: white;
+}
+
+.instructions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
 }
     .container{
         background: #ccc !important;
@@ -72,8 +94,9 @@ a{
         }
         .menu span{
             /* font-family: sans-serif; */
-            margin-top: 10px;
-            font-size: 18px;
+            /* margin-top: 10px; */
+            /* font-size: 18px; */
+            text-align: center;
         }
         button{
             margin-top: 30px;
