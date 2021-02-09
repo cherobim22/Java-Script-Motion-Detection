@@ -135,7 +135,8 @@ document.addEventListener("DOMContentLoaded", function(){
       }//end if (mediaCorDaArea > 10)s
     }//end checkAreas()
 
-    
+
+ 
     
   
     var cont = 0;
@@ -144,35 +145,41 @@ document.addEventListener("DOMContentLoaded", function(){
       //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
       contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
       atualizarMapaDeMovimento();
-        var a = verificarBotao( $("#tecla"));
-        var b = verificarBotao( $("#tecla2"));
-        var c = verificarBotao( $("#tecla3"));
-        var d = verificarBotao( $("#tecla4"));
-   
-  
-    //  if(a === "true"){
-         
-    //      console.log("tocou no a")
-    //  }
-    //  if(b === "true"){
-    //     console.log("tocou no b")
-    // }
-    // if(c === "true"){
-    //     console.log("tocou no c")
-    // }
-
-    // if(d === "true"){
-    //     console.log("tocou no circulo")
-    //     cont= cont+1;
-    //     console.log(cont)
-    //     if(cont === 3){
-    //         setTimeout(()=>{
-    //              location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
-    //         },2000)
-           
-    //     }
       
-    // }
+  setTimeout(()=>{
+
+    var a = verificarBotao( $("#tecla"));
+    var b = verificarBotao( $("#tecla2"));
+    var c = verificarBotao( $("#tecla3"));
+    var d = verificarBotao( $("#tecla4"));
+
+//   if(d === "true"){
+         
+//       // console.log("tocou no a")
+//       saveLost();
+//   }
+//   if(b === "true"){
+//     //  console.log("tocou no b")
+//      saveLost();
+//  }
+//  if(c === "true"){
+//     //  console.log("tocou no c")
+//      saveLost();
+//  }
+
+ if(a === "true"){
+    //  console.log("tocou no circulo")
+    //  cont= cont+1;
+    //  console.log(cont)
+    //  if(cont === 3){
+         setTimeout(()=>{
+              location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
+         },2000)
+        
+     }
+   
+//  }
+  },2000);
       
     },1000/40);// end setInterval atualizacao
     });//domcontent load

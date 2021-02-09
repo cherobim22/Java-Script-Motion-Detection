@@ -143,34 +143,41 @@ document.addEventListener("DOMContentLoaded", function(){
       //ela pega o conteudo do video e joga no canvas invertido para melhorar a percepção do usuaroo
       contextoVideoComFlip.drawImage(video, 0, 0, video.width, video.height);
       atualizarMapaDeMovimento();
+      setTimeout(()=>{
+
         var a = verificarBotao( $("#tecla"));
         var b = verificarBotao( $("#tecla2"));
         var c = verificarBotao( $("#tecla3"));
         var d = verificarBotao( $("#tecla4"));
-   
-  
-     if(a === "true"){
-         
-         console.log("tocou no a")
-     }
-     if(b === "true"){
-        console.log("tocou no b")
-    }
-    if(c === "true"){
-        console.log("tocou no c")
-    }
-
-    if(d === "true"){
-        console.log("tocou no corretp")
-        cont= cont+1;
-        console.log(cont)
-        if(cont === 3){
-           alert("acertou")
-           
-        }
-      
-    }
-      
+    
+    //   if(d === "true"){
+             
+    //       // console.log("tocou no a")
+    //       saveLost();
+    //   }
+    //   if(b === "true"){
+    //     //  console.log("tocou no b")
+    //      saveLost();
+    //  }
+    //  if(c === "true"){
+    //     //  console.log("tocou no c")
+    //      saveLost();
+    //  }
+    
+     if(d === "true"){
+        //  console.log("tocou no circulo")
+         cont= cont+1;
+        //  console.log(cont)
+        //  if(cont === 3){
+        //    savePoint();
+             setTimeout(()=>{
+                  location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/end.html");
+             },2000)
+            
+         }
+       
+    //  }
+      },2000);
     },1000/40);// end setInterval atualizacao
     });//domcontent load
   
