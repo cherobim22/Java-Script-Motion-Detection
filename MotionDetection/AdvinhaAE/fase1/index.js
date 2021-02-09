@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //  console.log(cont)
     //  if(cont === 3){
          setTimeout(()=>{
-              location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase2.html");
+          location.replace(`${window.location.origin}/MotionDetection/AdvinhaAe/fase2.html`);
          },2000)
         
      }

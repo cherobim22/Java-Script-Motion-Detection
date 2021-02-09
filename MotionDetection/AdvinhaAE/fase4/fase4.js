@@ -164,14 +164,14 @@ document.addEventListener("DOMContentLoaded", function(){
     //      saveLost();
     //  }
     
-     if(d === "true"){
+     if(b === "true"){
         //  console.log("tocou no circulo")
          cont= cont+1;
         //  console.log(cont)
         //  if(cont === 3){
         //    savePoint();
              setTimeout(()=>{
-                  location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/end.html");
+              location.replace(`${window.location.origin}/MotionDetection/AdvinhaAe/fase5.html`);
              },2000)
             
          }

@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(){
         //  if(cont === 3){
         //    savePoint();
              setTimeout(()=>{
-                  location.replace("http://127.0.0.1:5501/MotionDetection/AdvinhaAe/fase4.html");
+              location.replace(`${window.location.origin}/MotionDetection/AdvinhaAe/fase4.html`);
              },2000)
             
          }

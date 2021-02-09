@@ -1,4 +1,4 @@
-var count = 5;
+var count = 60;
 var tempo = document.getElementById("tempo"); // associar a variável tempo ao elemento
 
 function start() {
