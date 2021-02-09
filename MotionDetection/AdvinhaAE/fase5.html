@@ -11,19 +11,25 @@
         <!-- <link rel="stylesheet" href="index.css"> -->
       </head>
       <body> 
-        <input type="hidden" id="fase" value="fase2">
-        <video id="video" autoplay width="800" height="500"></video>
+        <input type="hidden" id="fase" value="fase5">
+        <div class="main">
+          <video id="video" autoplay width="800" height="500"></video>
         <div class="menu">
-          <span>Analise as formas contidas na tela e escolha a que não pertence ao grupo de formas geométricas</span>
+          <span>Analise a imagem ao lado e selecione o resultado final.</span>
+         
          </div>
         <div class="content">
           <div id="container">
             <canvas id="video-com-flip" width="800" height="500"></canvas>
             <!-- <div id="questions"><span id="quest"></span></div> -->
-            <div id="tecla" class="target"><img src="img/square.svg" alt=""></div>
-            <div id="tecla2" class="target" ><img src="img/bleach.svg" alt=""></div>
-            <div id="tecla3" class="target"><img src="img/pentagon.svg" alt=""></div>
-            <div id="tecla4" class="target"><img src="img/drop.svg" alt=""></div>
+    
+          
+            <div id="eq" class="target"><img src="fase5/bees + rats.svg" alt=""></div>
+
+            <div id="tecla" class="target" ><img src="fase5/three.svg" alt=""></div>
+            <div id="tecla2" class="target" ><img src="fase5/six.svg" alt=""></div>
+            <div id="tecla3" class="target"><img src="fase5/13.svg" alt=""></div>
+            <div id="tecla4" class="target"><img src="fase5/seven.svg" alt=""></div>
           </div>
           <div class="options">
             <div class="life">
@@ -53,24 +59,29 @@
 
         <canvas id="mapa-de-movimento" width="800" height="500"></canvas>
       
-        <script src="fase2/fase2.js"></script>
-        <script src="countdown.js"></script>
+        <script src="fase5.js"></script>
       <!-- <a href="./WordAd.html">voltar</a> -->
       
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+        </div>
+        
       </body>
 <style>
-
-*{
+  *{
     margin: 0;
     padding: 0;
   }
+  .main{
+    width: 100%;
+    height: 100%;
+  }
   img{
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
   }
 
   
@@ -142,27 +153,50 @@ div#container{
     align-items: center;
     height: 70px;
   }
-  div#tecla{
-    
-    top: 15px;
-    left: 25px;
+ 
+  #eq img{
+    width: 140px;
+    height: 140px;
   }
-  
+  #eq{background: cornsilk;
+    top: 45px;
+    left: 25px;
+
+    /* border-radius: 29px; */
+    position: absolute;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+  }
+
+  div#tecla{
+    top: 18px;
+    left: 390px;
+      font-size: 28px;
+  }
   div#tecla2{
-  
-    top: 0px;
-    left: 220px;
+    font-size: 28px;
+    top: 60px;
+    left: 240px;
   }
   div#tecla3{
-   
-    top: 35px;
-    right: 20px;
+    font-size: 28px;
+    top: 10px;
+    right: 30px;
+    
+  }
+
+  div#tecla3 img{
+      width: 120px;
+      height: 120px;
   }
 
   div#tecla4{
-  
-    top:5px;
-    right: 250px;
+    font-size: 28px;
+    top: 55px;
+    right: 184px;
   }
 
   canvas#video-com-flip{
@@ -210,8 +244,8 @@ if(poinst != null){
 var positive = localStorage.getItem('ponto')
 
 
-var tecla = document.querySelector('#tecla');
 var tecla2 = document.querySelector('#tecla2');
+var tecla = document.querySelector('#tecla');
 var tecla3 = document.querySelector('#tecla3');
 
 observar(tecla);
@@ -265,7 +299,7 @@ function saveLost(){
 
 var tecla4 = document.querySelector('#tecla4');
 
-observaCerto(tecla4);
+observaCerto(tecla2);
 function observaCerto(target){
   var o = new MutationObserver(function(mutations) {
   
@@ -302,8 +336,7 @@ function savePoint(){
       var pod =  window.localStorage.getItem('pontos');
       document.getElementById('coins').innerText = `${pod}/5`;
 }
-    
-   
+
 
 </script>
 </html>

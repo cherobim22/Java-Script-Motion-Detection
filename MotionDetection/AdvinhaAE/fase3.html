@@ -1,76 +1,115 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-  <meta charset="utf-8">
-  <!-- Lucas Cherobim -->
-  <!-- Eu ja / Eu nunca -->
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- <link rel="stylesheet" href="index.css"> -->
-</head>
-<body> 
-  <input type="hidden" id="fase" value="fase1">
-  <video  id="video" autoplay width="800" height="500"></video>
- <div class="menu">
-  <span>Analise os números contidos na imagem e escolha qual é o maior deles</span>
- </div>
- <div class="content">
-    
-    <div id="container">
-      <canvas id="video-com-flip" width="800" height="500"></canvas>
-      <!-- <div id="questions"><span id="quest"></span></div> -->
-      <div id="tecla" class="target"><img src="fase1/135.svg" alt=""></div>
-      <div id="tecla2"  class="target"><img src="fase1/33.svg" alt=""></div>
-      <div id="tecla3"  class="target"><img src="fase1/43.svg" alt=""></div>
-      <div id="tecla4"  class="target"><img src="fase1/one.svg" alt=""></div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Lucas Cherobim -->
+        <!-- Eu ja / Eu nunca -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <link rel="stylesheet" href="index.css"> -->
+      </head>
+      <body> 
+        <input type="hidden" id="fase" value="fase3">
+        <video id="video" autoplay width="800" height="500"></video>
+        <div class="menu">
+          <span>Analise os grupos de imagens na tela e selecione qual grupo tem um número par de elementos.</span>
+         </div>
+        <div class="content">
+          <div id="container">
+            <canvas id="video-com-flip" width="800" height="500"></canvas>
+            <!-- <div id="questions"><span id="quest"></span></div> -->
+            <div id="tecla" class="target"><img src="fase3/circles.svg" alt=""></div>
+            <div id="tecla2" class="target" ><img src="fase3/triangles.svg" alt=""></div>
+            <div id="tecla3" class="target"><img src="fase3/squares.svg" alt=""></div>
+            <div id="tecla4" class="target"><img src="fase3/stars.svg" alt=""></div>
+          </div>
+          <div class="options">
+            <div class="life">
+              <img src="img/heart.svg" alt="">
+              <span id="life">0/4</span>
+            </div>
+            <div class="coins">
+              <img src="img/money.svg" alt="">
+              <span id="coins">0/5</span>
+            </div>
+            <div class="fase">
+              <img src="img/climb.svg" alt="">
+              <span>3/5</span>
+            </div>
+            <div class="clock">
+              <img src="img/clock.svg" alt="">
+              <span id="tempo"></span>
+            </div>
+          </div>
+        </div>
       
-    </div>
-    <div class="options">
-      <div class="life">
-        <img src="img/heart.svg" alt="">
-        <span id="life">0/4</span>
-      </div>
-      <div class="coins">
-        <img src="img/money.svg" alt="">
-        <span id="coins">0/5</span>
-      </div>
-      <div class="fase">
-        <img src="img/climb.svg" alt="">
-        <span>1/5</span>
-      </div>
-      <div class="clock">
-        <img src="img/clock.svg" alt="">
-        <span id="tempo"></span>
-      </div>
-    </div>
 
-  </div>
+        <!-- //proximas fases
+        par ou impar
+        grupo de bolinhas
+        contar animais -->
 
-  <canvas id="mapa-de-movimento" width="800" height="500"></canvas>
-
-  <script   src="fase1/index.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="countdown.js"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
-</body>
+        <canvas id="mapa-de-movimento" width="800" height="500"></canvas>
+      
+        <script src="fase3/fase3.js"></script>
+        <script src="countdown.js"></script>
+      <!-- <a href="./WordAd.html">voltar</a> -->
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+      </body>
 <style>
   *{
     margin: 0;
     padding: 0;
   }
-
-  .target span{
-    font-size: 28px;
-    color: #8000FF;
+  img{
+    width: 80px;
+    height: 80px;
   }
 
+  
+  .menu{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+  
+  .menu span{
+    position:absolute;
+    top: 45px;
+    font-size: 28px;
+    color: white;
+  }
 
-  div#container{
+  .options img{
+    width: 30px;
+    height: 30px;
+  }
+  .options{
+    opacity: 0.8;
+    position: relative;
+    top: 275px;
+    /* border: 1px solid red; */
+    background: cornsilk;
+    width: 800px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .fase , .life, .clock, .coins{
+    padding: 10px;
+  }
+div#container{
     position: absolute;
     border: 2px;
     z-index: 99999;
@@ -93,49 +132,6 @@
     background-color: #1f334b;
   }
    
-  img{
-    width: 50px;
-    height: 50px;
-    z-index: 999999;
-  }
-
-  .menu{
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red; */
-  }
-  
-  .menu span{
-    position:absolute;
-    top: 45px;
-    font-size: 28px;
-    color: white;
-  }
-
- .options img{
-    width: 30px;
-    height: 30px;
-  }
-  .options{
-    opacity: 0.8;
-    position: relative;
-    top: 275px;
-    /* border: 1px solid red; */
-    background: cornsilk;
-    width: 800px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    
-  }
-  .fase , .life, .clock, .coins{
-    padding: 10px;
-  }
-
   .target{
     border-radius: 29px;
     position: absolute;
@@ -147,36 +143,24 @@
   }
   div#tecla{
     
-    top: 15px;
-    left: 35px;
+    top: 45px;
+    left: 25px;
   }
-  #tecla img{
-    width: 130px;
-    height: 130px;
-  }
- 
+  
   div#tecla2{
   
-    top: 5px;
-    left: 260px;
+    top: 70px;
+    left: 220px;
   }
-  #tecla2 img{
-    width: 90px;
-    height: 90px;
-  }
-
   div#tecla3{
-    top: 35px;
-    right: 40px;
-  }
-
-  #tecla3 img{
-    width: 120px;
-    height: 120px;
+   
+    top: 45px;
+    right: 20px;
   }
 
   div#tecla4{
-    top:5px;
+  
+    top:55px;
     right: 250px;
   }
 
@@ -186,7 +170,6 @@
     left: 0;
     z-index: -1;
   }
-
   video{
     display: none;
   }
@@ -195,7 +178,6 @@
   }
   
   .content{
-    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +195,7 @@ $(document).ready(()=>{
   }
   var pn =  window.localStorage.getItem('pontos_perdidos');
   if(pn != null){
-    document.getElementById('life').innerText = `${pn}/5`
+    document.getElementById('life').innerText = `${pn}/4`
   }
  
 });
@@ -228,11 +210,11 @@ var positive = localStorage.getItem('ponto')
 
 
 var tecla4 = document.querySelector('#tecla4');
-var tecla2 = document.querySelector('#tecla2');
+var tecla = document.querySelector('#tecla');
 var tecla3 = document.querySelector('#tecla3');
 
+observar(tecla);
 observar(tecla4);
-observar(tecla2);
 observar(tecla3);
 
 function observar(target){
@@ -280,9 +262,9 @@ function saveLost(){
 }
 
 
-var tecla = document.querySelector('#tecla');
+var tecla2 = document.querySelector('#tecla2');
 
-observaCerto(tecla);
+observaCerto(tecla2);
 function observaCerto(target){
   var o = new MutationObserver(function(mutations) {
   
@@ -319,9 +301,5 @@ function savePoint(){
       var pod =  window.localStorage.getItem('pontos');
       document.getElementById('coins').innerText = `${pod}/5`;
 }
-    
-   
-
-  
 </script>
 </html>
